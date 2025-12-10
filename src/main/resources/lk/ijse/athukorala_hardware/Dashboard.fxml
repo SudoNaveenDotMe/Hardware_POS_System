@@ -28,9 +28,9 @@
                      <children>
                         <Button onAction="#customerOnAction" styleClass="nav-btn" text="Customer" />
                         <Button onAction="#itemOnAction" styleClass="nav-btn" text="Item" />
-                        <Button onAction="#orderOnAction" styleClass="nav-btn" text="Order" />
                         <Button onAction="#driverOnAction" styleClass="nav-btn" text="Driver" />
                         <Button onAction="#supplierOnAction" styleClass="nav-btn" text="Supplier" />
+                        <Button onAction="#orderOnAction" styleClass="nav-btn" text="Order" />
                      </children>
                   </VBox>
                   <VBox VBox.vgrow="ALWAYS" />

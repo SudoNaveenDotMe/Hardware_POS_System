@@ -41,12 +41,14 @@ public class DashboardController implements Initializable {
 
     @FXML
     public void supplierOnAction(ActionEvent actionEvent) throws IOException {
-        Parent supplierFXML = App.loadFXML("Driver");
+        Parent supplierFXML = App.loadFXML("Supplier");
         mainContent.getChildren().setAll(supplierFXML);
     }
 
     @FXML
-    public void orderOnAction(ActionEvent actionEvent) {
+    public void orderOnAction(ActionEvent actionEvent) throws IOException {
+        Parent orderFXML = App.loadFXML("Order");
+        mainContent.getChildren().setAll(orderFXML);
     }
 
     @FXML
