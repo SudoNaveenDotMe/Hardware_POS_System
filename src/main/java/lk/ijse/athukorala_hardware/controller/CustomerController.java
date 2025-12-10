@@ -8,6 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,6 +37,8 @@ public class CustomerController implements Initializable {
     public TableColumn colEmail;
     @FXML
     public TableColumn colAddress;
+
+    public AnchorPane customerContent;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

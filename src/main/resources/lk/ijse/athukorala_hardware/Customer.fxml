@@ -14,90 +14,87 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="customerContent" prefHeight="600.0" prefWidth="760.0" style="-fx-background-color: #faf7f9;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.CustomerController">
+
     <children>
 
-        <!-- Top Header -->
-        <VBox alignment="CENTER" prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #f3d6c7; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+        <!-- Header -->
+        <VBox alignment="CENTER" prefHeight="80.0" prefWidth="760.0" style="-fx-background-color: #f3d6c7; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
             <children>
                 <Text text="Customer Management">
-                    <font>
-                        <Font name="System Bold" size="28.0" />
-                    </font>
+                    <font><Font name="System Bold" size="28.0" /></font>
                 </Text>
             </children>
         </VBox>
 
         <!-- Form Section -->
-        <Pane layoutY="80.0" prefHeight="290.0" prefWidth="800.0">
+        <Pane layoutY="80.0" prefHeight="290.0" prefWidth="760.0">
             <children>
 
-                <!-- Left side fields -->
-                <VBox layoutX="50.0" layoutY="14.0" prefWidth="341.0" spacing="6">
+                <!-- Column 1 (Left side inputs) -->
+                <VBox layoutX="40.0" layoutY="20.0" prefWidth="330.0" spacing="12">
                     <children>
-                        <Label style="-fx-font-size: 18px;" text="Customer ID :" />
-                        <TextField fx:id="idField" onKeyPressed="#searchCustomerOnAction" prefHeight="12.0" prefWidth="341.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+
+                        <VBox spacing="5">
+                            <Label style="-fx-font-size: 18px;" text="Customer ID :" />
+                            <TextField fx:id="idField" onKeyPressed="#searchCustomerOnAction" prefHeight="8.0" prefWidth="330.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <Label style="-fx-font-size: 18px;" text="Name :" />
+                            <TextField fx:id="nameField" prefHeight="9.0" prefWidth="330.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <Label style="-fx-font-size: 18px;" text="Contact :" />
+                            <TextField fx:id="contactField" prefHeight="9.0" prefWidth="330.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+                        </VBox>
+
                     </children>
                 </VBox>
 
-                <VBox layoutX="50.0" layoutY="84.0" prefWidth="341.0" spacing="6">
+                <!-- Column 2 (Right side inputs) -->
+                <VBox layoutX="410.0" layoutY="20.0" prefWidth="330.0" spacing="12">
                     <children>
-                        <Label style="-fx-font-size: 18px;" text="Name :" />
-                        <TextField fx:id="nameField" prefHeight="14.0" prefWidth="341.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+
+                        <VBox spacing="5">
+                            <Label style="-fx-font-size: 18px;" text="Email :" />
+                            <TextField fx:id="emailField" prefHeight="16.0" prefWidth="330.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <Label style="-fx-font-size: 18px;" text="Address :" />
+                            <TextArea fx:id="addressField" prefHeight="96.0" prefWidth="330.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
+                        </VBox>
+
                     </children>
                 </VBox>
 
-                <VBox layoutX="50.0" layoutY="154.0" prefWidth="341.0" spacing="6">
-                    <children>
-                        <Label style="-fx-font-size: 18px;" text="Contact :" />
-                        <TextField fx:id="contactField" prefHeight="9.0" prefWidth="341.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
-                    </children>
-                </VBox>
+                <!-- Buttons Row -->
+                <HBox alignment="CENTER" layoutX="0.0" layoutY="235.0" prefWidth="760.0" spacing="30">
 
-                <!-- Address -->
-                <VBox layoutX="432.0" layoutY="84.0" prefWidth="341.0" spacing="6">
-                    <children>
-                        <Label style="-fx-font-size: 18px;" text="Address :" />
-                        <TextArea fx:id="addressField" prefHeight="93.0" prefWidth="341.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
-                    </children>
-                </VBox>
+                    <Button onAction="#saveCustomerOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #32a852; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Save" />
 
-                <!-- Buttons -->
-                <HBox alignment="CENTER" layoutX="50.0" layoutY="238.0" prefWidth="700.0" spacing="25">
+                    <Button onAction="#updateCustomerOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #3a39a6; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Update" />
 
-                    <Button onAction="#saveCustomerOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #32a852; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Save">
-                    </Button>
+                    <Button onAction="#deleteCustomerOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #d62839; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Delete" />
 
-                    <Button onAction="#updateCustomerOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #3a39a6; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Update">
-                    </Button>
-
-                    <Button onAction="#deleteCustomerOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #d62839; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Delete">
-                    </Button>
-
-                    <Button onAction="#clearFields" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #e6a21a; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Reset">
-                    </Button>
-               <Button layoutX="518.0" layoutY="10.0" onAction="#goBack" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #e6a21a; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Go Back" />
+                    <Button onAction="#clearFields" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #e6a21a; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 18;" text="Reset" />
 
                 </HBox>
-            <VBox layoutX="432.0" layoutY="14.0" prefWidth="341.0" spacing="6">
-               <children>
-                  <Label style="-fx-font-size: 18px;" text="Email :" />
-                  <TextField fx:id="emailField" onKeyPressed="#searchCustomerOnAction" prefHeight="15.0" prefWidth="341.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" />
-               </children>
-            </VBox>
 
             </children>
         </Pane>
 
         <!-- Table Section -->
-        <Pane layoutY="370.0" prefHeight="230.0" prefWidth="800.0">
+        <Pane layoutY="370.0" prefHeight="230.0" prefWidth="760.0">
             <children>
-                <TableView fx:id="tblCustomer" layoutX="22.0" layoutY="15.0" prefHeight="200.0" prefWidth="756.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">
+                <TableView fx:id="tblCustomer" layoutX="20.0" layoutY="15.0" prefHeight="200.0" prefWidth="720.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">
                     <columns>
-                        <TableColumn fx:id="colId" prefWidth="104.0" text="ID" />
-                        <TableColumn fx:id="colName" prefWidth="189.0" text="Name" />
-                        <TableColumn fx:id="colAddress" prefWidth="198.0" text="Address" />
-                        <TableColumn fx:id="colEmail" prefWidth="133.0" text="Email" />
-                  <TableColumn fx:id="colContact" prefWidth="129.0" text="Contact" />
+                        <TableColumn fx:id="colId" prefWidth="100.0" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="160.0" text="Name" />
+                        <TableColumn fx:id="colAddress" prefWidth="200.0" text="Address" />
+                        <TableColumn fx:id="colEmail" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="colContact" prefWidth="110.0" text="Contact" />
                     </columns>
                 </TableView>
             </children>
