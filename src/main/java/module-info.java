@@ -6,4 +6,5 @@ module lk.ijse.athukorala_hardware.athukorala_hardware {
 
     opens lk.ijse.athukorala_hardware to javafx.fxml;
     exports lk.ijse.athukorala_hardware;
+    exports lk.ijse.athukorala_hardware.controller;
 }
