@@ -23,7 +23,7 @@ public class CustomerController implements Initializable {
     @FXML
     public TextField contactField;
     @FXML
-    public TextArea addressField;
+    public TextField addressField;
 
     @FXML
     public TableView tblCustomer;
@@ -63,9 +63,5 @@ public class CustomerController implements Initializable {
 
     @FXML
     public void clearFields(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void goBack(ActionEvent actionEvent) {
     }
 }

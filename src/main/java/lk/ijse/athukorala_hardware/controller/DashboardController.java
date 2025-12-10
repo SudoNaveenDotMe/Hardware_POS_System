@@ -28,7 +28,9 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    public void itemOnAction(ActionEvent actionEvent) {
+    public void itemOnAction(ActionEvent actionEvent) throws IOException {
+        Parent itemFXML = App.loadFXML("Item");
+        mainContent.getChildren().setAll(itemFXML);
     }
 
     @FXML
