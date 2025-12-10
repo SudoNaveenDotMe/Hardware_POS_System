@@ -34,7 +34,9 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    public void driverOnAction(ActionEvent actionEvent) {
+    public void driverOnAction(ActionEvent actionEvent) throws IOException {
+        Parent driverFXML = App.loadFXML("Driver");
+        mainContent.getChildren().setAll(driverFXML);
     }
 
     @FXML
