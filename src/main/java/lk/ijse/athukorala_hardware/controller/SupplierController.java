@@ -16,6 +16,7 @@ public class SupplierController implements Initializable {
     public TextField contactField;
     public TextField emailField;
     public TextField addressField;
+
     public TableView tblCustomer;
     public TableColumn colId;
     public TableColumn colName;

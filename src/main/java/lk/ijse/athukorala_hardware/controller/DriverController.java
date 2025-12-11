@@ -15,6 +15,7 @@ public class DriverController implements Initializable {
     public TextField driverNameField;
     public TextField driverContactField;
     public TextField driverAddressField;
+
     public TableView tblDrivers;
     public TableColumn colId;
     public TableColumn colName;

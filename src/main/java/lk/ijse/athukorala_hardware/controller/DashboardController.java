@@ -54,4 +54,8 @@ public class DashboardController implements Initializable {
     @FXML
     public void logoutOnAction(ActionEvent actionEvent) {
     }
+
+    public void reportOnAction(ActionEvent actionEvent) {
+
+    }
 }
