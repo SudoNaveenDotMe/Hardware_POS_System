@@ -7,12 +7,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import lk.ijse.athukorala_hardware.App;
+import lk.ijse.athukorala_hardware.db.DBConnection;
+import lk.ijse.athukorala_hardware.dto.UserDTO;
+import lk.ijse.athukorala_hardware.model.UserModel;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
+
+    private final UserModel userModel = new UserModel();
 
     @FXML
     public TextField usernameField;
@@ -26,25 +32,27 @@ public class LoginController implements Initializable {
 
     @FXML
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
-        String realUsername = "Naveen";
-        String realPassword = "Naveen123";
+        String email = usernameField.getText().toLowerCase();
+        String password = passwordField.getText().trim();
 
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        try {
+            DBConnection.getInstance().getConnection();
+            UserDTO userDTO = userModel.searchUser(email);
 
-        if (username.equals(realUsername) && password.equals(realPassword)) {
-            System.out.println("Login successful");
-            App.setRoot("Dashboard");
+            if (userDTO!=null){
+                if (userDTO.getPassword().equals(password)){
+                    App.setRoot("Dashboard");
+                }
 
-        } else {
-            System.out.println("Login failed");
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Login Massage");
-            alert.setHeaderText("Login failed");
-            alert.show();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "User Not Found (%s)" + email).show();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
     }
+
 
     @FXML
     public void resetOnAction(ActionEvent actionEvent) {
@@ -53,7 +61,6 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-
     public void forgotPasswordOnAction(ActionEvent actionEvent) {
 
     }

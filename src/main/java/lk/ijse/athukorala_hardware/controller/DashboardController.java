@@ -18,6 +18,7 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Dashboard Loaded!!");
 
     }
 
@@ -51,11 +52,11 @@ public class DashboardController implements Initializable {
         mainContent.getChildren().setAll(orderFXML);
     }
 
-    @FXML
-    public void logoutOnAction(ActionEvent actionEvent) {
+    public void reportOnAction(ActionEvent actionEvent) {
+
     }
 
-    public void reportOnAction(ActionEvent actionEvent) {
+    public void logoutOnAction(ActionEvent actionEvent) {
 
     }
 }

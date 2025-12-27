@@ -17,7 +17,7 @@ public class CrudUtil {
             ptsm.setObject(i + 1, obj[i]);
         }
 
-        if (sql.startsWith("select") || sql.equals("SELECT")) {
+        if (sql.startsWith("SELECT") || sql.equals("select")) {
             ResultSet resultSet = ptsm.executeQuery();
             return (T) resultSet;
         } else {

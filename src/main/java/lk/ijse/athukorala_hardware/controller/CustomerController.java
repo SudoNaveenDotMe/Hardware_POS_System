@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CustomerController implements Initializable {
+    private final CustomerModel customerModel = new CustomerModel();
     @FXML
     public TextField emailField;
     @FXML
@@ -31,7 +29,6 @@ public class CustomerController implements Initializable {
     public TextField contactField;
     @FXML
     public TextField addressField;
-
     @FXML
     public TableView tblCustomer;
     @FXML
@@ -44,22 +41,10 @@ public class CustomerController implements Initializable {
     public TableColumn colEmail;
     @FXML
     public TableColumn colAddress;
-
     public AnchorPane customerContent;
-
-    private final CustomerModel customerModel = new CustomerModel();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*System.out.println("CustomerFXML loaded");
-
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
-
-        loadCustomerTableOnAction();*/
     }
 
     @FXML
@@ -68,7 +53,6 @@ public class CustomerController implements Initializable {
 
     @FXML
     public void saveCustomerOnAction(ActionEvent actionEvent) {
-
     }
 
     @FXML
@@ -79,23 +63,7 @@ public class CustomerController implements Initializable {
     public void deleteCustomerOnAction(ActionEvent actionEvent) {
     }
 
-    /*
     @FXML
-    private void loadCustomerTableOnAction() {
-        try {
-            List<CustomerDTO> customerList = customerModel.getCustomers();
-            ObservableList<CustomerDTO> obList = FXCollections.observableArrayList();
-
-            obList.addAll(customerList);
-            tblCustomer.setItems(obList);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-    }*/
-
-    @FXML
-    public void clearFields(ActionEvent actionEvent) {
+    public void clearFields() {
     }
 }
