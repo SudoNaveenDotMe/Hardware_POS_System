@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.OrderFormController">
+<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.OrderController">
 
     <!-- Page Title -->
     <Label layoutX="40" layoutY="30" style="-fx-font-size: 28px; -fx-text-fill: #333; -fx-font-weight: bold;" text="Place Order" />
 
     <!-- Form -->
-    <VBox layoutX="40" layoutY="100" prefHeight="768.0" prefWidth="300.0" spacing="18">
+    <VBox layoutX="40" layoutY="100" prefHeight="768.0" prefWidth="300.0" spacing="25.0">
 
         <!-- Customer Selection -->
         <VBox spacing="6">
@@ -26,18 +26,18 @@
         </VBox>
 
         <!-- Customer Details -->
-        <VBox spacing="4">
+        <VBox spacing="20.0">
          <HBox prefHeight="40.0" prefWidth="300.0" spacing="20.0">
             <children>
-                  <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Customer ID :" />
-                  <Label fx:id="lblCustomerId" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Customer Name :" />
+                  <Label fx:id="lblCustomerName" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
             </children>
          </HBox>
          <HBox prefHeight="40.0" prefWidth="200.0" spacing="20.0">
             <children>
       
-                  <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Customer Name :" />
-                  <Label fx:id="lblCustomerName" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Customer Address  :" />
+                  <Label fx:id="lblCustomerAddress" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
             </children>
          </HBox>
         </VBox>
@@ -51,16 +51,10 @@
         <!-- Item Details -->
         <VBox spacing="4">
          <children>
-            <HBox prefHeight="40.0" prefWidth="300.0" spacing="20.0">
-               <children>
-                  <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Item Code :" />
-                  <Label fx:id="lblCustomerId1" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-               </children>
-            </HBox>
             <HBox prefHeight="40.0" prefWidth="200.0" spacing="20.0">
                <children>
                   <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Item Name :" />
-                  <Label fx:id="lblCustomerName1" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+                  <Label fx:id="lblItemName" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
                </children>
             </HBox>
          </children>
@@ -69,7 +63,7 @@
         <!-- Price -->
         <VBox spacing="6">
             <Label style="-fx-font-size: 16px; -fx-text-fill: #444;" text="Price" />
-            <TextField fx:id="txtPrice" editable="false" prefWidth="300" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: #f0f0f0;" />
+            <TextField fx:id="txtItemPrice" editable="false" prefWidth="300" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: #f0f0f0;" />
         </VBox>
 
         <!-- Stock Qty -->
@@ -92,17 +86,20 @@
     <Separator layoutX="380" layoutY="20" orientation="VERTICAL" prefHeight="860.0" prefWidth="5.0" />
 
     <!-- Cart Table -->
-    <TableView fx:id="tblCart" layoutX="420" layoutY="100" prefHeight="600.0" prefWidth="720.0" style="-fx-background-radius: 12; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 12;">
+    <TableView fx:id="tblCart" layoutX="420" layoutY="100" prefHeight="600.0" prefWidth="764.0" style="-fx-background-radius: 12; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 12;">
 
         <columns>
-            <TableColumn prefWidth="300.0" text="Item" />
-            <TableColumn prefWidth="150.0" text="Qty" />
-            <TableColumn prefWidth="250.0" text="Price" />
+            <TableColumn fx:id="colIndex" prefWidth="113.0" text="ItemCode" />
+            <TableColumn fx:id="colItemName" prefWidth="166.0" text="Name" />
+         <TableColumn fx:id="colQty" prefWidth="106.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="134.0" text="Unit Price" />
+         <TableColumn fx:id="colTotalPrice" prefWidth="135.0" text="Total Price" />
+         <TableColumn fx:id="colAction" prefWidth="107.0" text="Action" />
         </columns>
     </TableView>
 
     <!-- Place Order -->
-    <Button layoutX="920.0" layoutY="755.0" prefHeight="45" prefWidth="220" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 18px; -fx-background-radius: 10;" text="Place Order" />
+    <Button layoutX="964.0" layoutY="755.0" prefHeight="45" prefWidth="220" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 18px; -fx-background-radius: 10;" text="Place Order" />
 
     <!-- Net Total -->
     <HBox layoutX="433.0" layoutY="763.0" spacing="10">
