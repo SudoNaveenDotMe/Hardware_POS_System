@@ -21,9 +21,9 @@ public class LoginController implements Initializable {
     private final UserModel userModel = new UserModel();
 
     @FXML
-    public TextField usernameField;
-    @FXML
     public PasswordField passwordField;
+    @FXML
+    public TextField userEmailField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -32,20 +32,26 @@ public class LoginController implements Initializable {
 
     @FXML
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
-        String email = usernameField.getText().toLowerCase();
+        String email = userEmailField.getText().toLowerCase();
         String password = passwordField.getText().trim();
 
         try {
             DBConnection.getInstance().getConnection();
             UserDTO userDTO = userModel.searchUser(email);
 
-            if (userDTO!=null){
-                if (userDTO.getPassword().equals(password)){
-                    App.setRoot("Dashboard");
+            if (userDTO != null) {
+                if (userDTO.getPassword().equals(password)) {
+                    if (userDTO.getRole().equals("Admin"))
+                        App.setRoot("AdminDashboard",1500,950);
+                    else {
+                        App.setRoot("CashierDashboard",1500,950);
+                    }
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Wrong Password !!").show();
                 }
 
-            }else {
-                new Alert(Alert.AlertType.ERROR, "User Not Found (%s)" + email).show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, String.format("User Not Found (%s)", email)).show();
             }
 
         } catch (SQLException e) {
@@ -56,7 +62,7 @@ public class LoginController implements Initializable {
 
     @FXML
     public void resetOnAction(ActionEvent actionEvent) {
-        usernameField.clear();
+        userEmailField.clear();
         passwordField.clear();
     }
 

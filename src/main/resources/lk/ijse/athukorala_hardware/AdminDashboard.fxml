@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="900.0" prefWidth="1500.0"
+            stylesheets="@../../../lk/ijse/athukorala_hardware/css/style.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.athukorala_hardware.controller.AdminDashboardController">
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <AnchorPane fx:id="mainContent"
+                    prefWidth="1200.0"
+                    prefHeight="900.0"
+                    style="-fx-background-color: #f7f7f7;" />
+    </center>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <Pane prefHeight="900.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER"
+                      prefHeight="900.0"
+                      prefWidth="300.0"
+                      spacing="20"
+                      style="-fx-background-color: #ffffff;">
+
+                    <children>
+                        <!-- LOGO -->
+                        <ImageView fitHeight="150.0" fitWidth="260.0" preserveRatio="true">
+                            <image>
+                                <Image url="@images/ATLOGO.png"/>
+                            </image>
+                        </ImageView>
+
+                        <!-- NAVIGATION -->
+                        <VBox alignment="TOP_CENTER" spacing="12">
+                            <children>
+                                <Button onAction="#customerOnAction" styleClass="nav-btn" text="Customer"/>
+                                <Button onAction="#itemOnAction" styleClass="nav-btn" text="Item"/>
+                                <Button onAction="#driverOnAction" styleClass="nav-btn" text="Driver"/>
+                                <Button onAction="#supplierOnAction" styleClass="nav-btn" text="Supplier"/>
+                                <Button onAction="#orderOnAction" styleClass="nav-btn" text="Order"/>
+                                <Button onAction="#reportOnAction" styleClass="nav-btn" text="Report"/>
+                                <Button onAction="#userOnAction" styleClass="nav-btn" text="Users"/>
+                            </children>
+                        </VBox>
+
+                        <!-- PUSH LOGOUT DOWN -->
+                        <VBox VBox.vgrow="ALWAYS"/>
+
+                        <!-- LOGOUT -->
+                        <Button onAction="#logoutOnAction" styleClass="logout-btn" text="Logout">
+                            <VBox.margin>
+                                <Insets bottom="30"/>
+                            </VBox.margin>
+                        </Button>
+
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+    </left>
+
+</BorderPane>

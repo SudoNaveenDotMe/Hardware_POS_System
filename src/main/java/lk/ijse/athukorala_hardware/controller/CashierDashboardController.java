@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable {
+public class CashierDashboardController implements Initializable {
 
     @FXML
     public AnchorPane mainContent;
@@ -56,7 +56,7 @@ public class DashboardController implements Initializable {
 
     }
 
-    public void logoutOnAction(ActionEvent actionEvent) {
-
+    public void logoutOnAction(ActionEvent actionEvent) throws IOException {
+        App.setRoot("Login",1000,600);
     }
 }

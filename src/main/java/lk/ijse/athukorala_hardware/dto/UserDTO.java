@@ -5,21 +5,24 @@ public class UserDTO {
     private String name;
     private String email;
     private String password;
+    private String role;
 
     public UserDTO() {
     }
 
-    public UserDTO(int userId, String name, String email, String password) {
+    public UserDTO(int userId, String name, String email, String password, String role) {
         this.userId = userId;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
-    public UserDTO(String name, String email, String password) {
+    public UserDTO(String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public int getUserId() {
@@ -54,6 +57,14 @@ public class UserDTO {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -61,6 +72,7 @@ public class UserDTO {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

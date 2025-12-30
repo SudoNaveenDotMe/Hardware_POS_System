@@ -17,8 +17,10 @@ public class UserModel {
             String name = resultSet.getString("name");
             String userEmail = resultSet.getString("email");
             String password = resultSet.getString("password");
+            String role = resultSet.getString("role");
 
-            return new UserDTO(id,name,userEmail,password);
+
+            return new UserDTO(id,name,userEmail,password,role);
         }
         return null;
     }

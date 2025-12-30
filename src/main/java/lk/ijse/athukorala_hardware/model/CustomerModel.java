@@ -26,7 +26,7 @@ public class CustomerModel {
 
     public boolean updateCustomer(CustomerDTO customerDTO) throws SQLException {
         boolean result = CrudUtil.execute(
-                "UPDATE customer SET name =? , contact=?, address = ?, email=? WHERE id LIKE ?",
+                "UPDATE customer SET name =? , contact=?, address = ?, email=? WHERE cus_id LIKE ?",
                 customerDTO.getName(),
                 customerDTO.getContact(),
                 customerDTO.getAddress(),
@@ -39,7 +39,7 @@ public class CustomerModel {
 
     public boolean deleteCustomer(String id) throws SQLException {
         boolean result = CrudUtil.execute(
-                "DELETE FROM customer WHERE id LIKE ?",
+                "DELETE FROM customer WHERE cus_id LIKE ?",
                 id
         );
 
@@ -48,16 +48,16 @@ public class CustomerModel {
     }
 
     public CustomerDTO searchCustomer(String id) throws SQLException {
-        ResultSet result = CrudUtil.execute("SELECT * FROM customer WHERE id LIKE ?", id);
+        ResultSet result = CrudUtil.execute("SELECT * FROM customer WHERE cus_id LIKE ?", id);
 
         if (result.next()) {
-            int cusId = result.getInt("id");
+            int cusId = result.getInt("cus_id");
             String name = result.getString("name");
             String address = result.getString("address");
             String email = result.getString("email");
             String contact = result.getString("contact");
 
-            return new CustomerDTO(cusId,name,contact,address,email);
+            return new CustomerDTO(cusId, name, contact, address, email);
         }
         return null;
     }
@@ -73,16 +73,31 @@ public class CustomerModel {
 
         while (resultSet.next()) {
             CustomerDTO customerDTO = new CustomerDTO(
-                    resultSet.getInt("id"),
+                    resultSet.getInt("cus_id"),
                     resultSet.getString("name"),
+                    resultSet.getString("contact"),
                     resultSet.getString("address"),
-                    resultSet.getString("email"),
-                    resultSet.getString("contact")
+                    resultSet.getString("email")
 
 
             );
             customerDTOList.add(customerDTO);
         }
         return customerDTOList;
+    }
+
+    public List<String> getAllCustomerIds() throws SQLException {
+
+        ResultSet rs = CrudUtil.execute("SELECT cus_id FROM customer");
+
+        List<String> customerIdList = new ArrayList<>();
+
+        while (rs.next()) {
+            String id = rs.getString("cus_id");
+            customerIdList.add(id);
+        }
+
+        return customerIdList;
+
     }
 }

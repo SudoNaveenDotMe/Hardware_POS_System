@@ -34,7 +34,7 @@
                   <VBox spacing="6">
                      <children>
                         <Label style="-fx-font-size: 14px; -fx-text-fill: #444;" text="User Name" />
-                        <TextField fx:id="usernameField" prefHeight="40.0" prefWidth="367.0" promptText="Enter your email" />
+                        <TextField fx:id="userEmailField" prefHeight="40.0" prefWidth="367.0" promptText="Enter your email" />
                      </children>
                   </VBox>
                   <VBox spacing="6">

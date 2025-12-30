@@ -9,17 +9,28 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
+    private static Stage primaryStage;
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Login"));
+        primaryStage = stage;
+        scene = new Scene(loadFXML("CashierDashboard"));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    public static void setRoot(String fxml, double width, double height) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.centerOnScreen();
     }
 
     public static Parent loadFXML(String fxml) throws IOException {
@@ -30,7 +41,6 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
 
 

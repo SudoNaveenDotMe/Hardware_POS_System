@@ -38,7 +38,7 @@ public class ItemModel {
 
     public boolean deleteItem(String id) throws SQLException {
         boolean result = CrudUtil.execute(
-                "DELETE FROM item WHERE stock_id LIKE ?",
+                "DELETE FROM item WHERE item_id LIKE ?",
                 id
         );
 
@@ -47,10 +47,10 @@ public class ItemModel {
     }
 
     public ItemDTO searchItem(String id) throws SQLException {
-        ResultSet result = CrudUtil.execute("SELECT * FROM item WHERE stock_id LIKE ?", id);
+        ResultSet result = CrudUtil.execute("SELECT * FROM item WHERE item_id LIKE ?", id);
 
         if (result.next()) {
-            int itemId = result.getInt("stock_id");
+            int itemId = result.getInt("item_id");
             String name = result.getString("name");
             double price = result.getDouble("price");
             int qty = result.getInt("stock_qty");
@@ -71,7 +71,7 @@ public class ItemModel {
 
         while (resultSet.next()) {
             ItemDTO itemDTO = new ItemDTO(
-                    resultSet.getInt("stock_id"),
+                    resultSet.getInt("item_id"),
                     resultSet.getString("name"),
                     resultSet.getDouble("price"),
                     resultSet.getInt("stock_qty")

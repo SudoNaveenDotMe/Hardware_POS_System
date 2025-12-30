@@ -12,67 +12,71 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="760.0" style="-fx-background-color: #faf7f9;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.SupplierController">
+<AnchorPane prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #faf7f9;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.SupplierController">
 
     <children>
 
         <!-- Header -->
-        <VBox alignment="CENTER" prefHeight="80.0" prefWidth="760.0" style="-fx-background-color: #f3d6c7; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" style="-fx-background-color: #f3d6c7; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
             <children>
                 <Text text="Supplier Management">
-                    <font><Font name="System Bold" size="28.0" /></font>
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
                 </Text>
             </children>
         </VBox>
 
         <!-- Form Section -->
-        <Pane layoutY="80.0" prefHeight="336.0" prefWidth="760.0">
+        <Pane layoutY="100.0" prefHeight="430.0" prefWidth="1200.0">
             <children>
 
-                <!-- Column 1 (Left side inputs) -->
-                <VBox layoutX="40.0" layoutY="20.0" prefWidth="330.0" spacing="12">
+                <!-- Column 1 -->
+                <VBox layoutX="120.0" layoutY="30.0" prefWidth="400.0" spacing="14">
                     <children>
 
-                        <VBox spacing="5">
+                        <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Supplier ID :" />
-                            <TextField fx:id="idField" onKeyPressed="#searchSupplierOnAction" prefHeight="18.0" prefWidth="330.0" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="idField" onKeyPressed="#searchSupplierOnAction" prefWidth="400.0" promptText="Enter Supplier ID Here" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
-                        <VBox spacing="5">
+                        <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Name :" />
-                            <TextField fx:id="nameField" prefHeight="20.0" prefWidth="330.0" promptText="Enter name" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="nameField" prefWidth="400.0" promptText="Enter name" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
-                        <VBox spacing="5">
+                        <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Contact :" />
+                            <TextField fx:id="contactField" prefWidth="400.0" promptText="Enter Contact" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
-                        <TextField fx:id="contactField" prefWidth="300.0" promptText="Enter Contact" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
 
                     </children>
                 </VBox>
 
-                <!-- Column 2 (Right side inputs) -->
-                <VBox layoutX="410.0" layoutY="20.0" prefWidth="330.0" spacing="12">
+                <!-- Column 2 -->
+                <VBox layoutX="680.0" layoutY="30.0" prefWidth="400.0" spacing="14">
                     <children>
 
-                        <VBox spacing="5">
+                        <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Email :" />
-                            <TextField fx:id="emailField" prefWidth="300.0" promptText="Enter Email" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="emailField" prefWidth="400.0" promptText="Enter Email" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
-                        <VBox spacing="5">
+                        <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Address :" />
-                            <TextField fx:id="addressField" prefHeight="125.0" prefWidth="330.0" promptText="Enter Address" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="addressField" prefHeight="140.0" prefWidth="400.0" promptText="Enter Address" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
                     </children>
                 </VBox>
-                <HBox alignment="CENTER" layoutX="-1.0" layoutY="264.0" prefWidth="760.0" spacing="30.0" style="-fx-padding: 10 0 0 0;">
+
+                <!-- Buttons -->
+                <HBox alignment="CENTER" layoutY="330.0" prefWidth="1200.0" spacing="35.0" style="-fx-padding: 10 0 0 0;">
                     <children>
-                        <Button onAction="#saveSupplierOnAction" prefHeight="40" prefWidth="120" style="-fx-background-color: #dc7363; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Save" />
-                        <Button onAction="#updateSupplierOnAction" prefHeight="40" prefWidth="120" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Update" />
-                        <Button onAction="#deleteSupplierOnAction" prefHeight="40" prefWidth="120" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Delete" />
-                        <Button onAction="#clearFields" prefHeight="40" prefWidth="120" style="-fx-background-color: #7a7a7a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Clear" />
+                        <Button onAction="#saveSupplierOnAction" prefHeight="42" prefWidth="140" style="-fx-background-color: #dc7363; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Save" />
+                        <Button onAction="#updateSupplierOnAction" prefHeight="42" prefWidth="140" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Update" />
+                        <Button onAction="#deleteSupplierOnAction" prefHeight="42" prefWidth="140" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Delete" />
+                        <Button onAction="#clearFields" prefHeight="42" prefWidth="140" style="-fx-background-color: #7a7a7a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Clear" />
                     </children>
                 </HBox>
 
@@ -80,15 +84,15 @@
         </Pane>
 
         <!-- Table Section -->
-        <Pane layoutY="422.0" prefHeight="178.0" prefWidth="760.0">
+        <Pane layoutY="540.0" prefHeight="340.0" prefWidth="1200.0">
             <children>
-                <TableView fx:id="tblCustomer" layoutX="7.0" prefHeight="167.0" prefWidth="749.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">
+                <TableView fx:id="tblCustomer" layoutX="30.0" prefHeight="320.0" prefWidth="1140.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">
                     <columns>
-                        <TableColumn fx:id="colId" prefWidth="100.0" text="ID" />
-                        <TableColumn fx:id="colName" prefWidth="130.0" text="Name" />
-                        <TableColumn fx:id="colAddress" prefWidth="230.0" text="Address" />
-                        <TableColumn fx:id="colEmail" prefWidth="150.0" text="Email" />
-                        <TableColumn fx:id="colContact" prefWidth="137.0" text="Contact" />
+                        <TableColumn fx:id="colId" prefWidth="140.0" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="220.0" text="Name" />
+                        <TableColumn fx:id="colAddress" prefWidth="320.0" text="Address" />
+                        <TableColumn fx:id="colEmail" prefWidth="250.0" text="Email" />
+                        <TableColumn fx:id="colContact" prefWidth="210.0" text="Contact" />
                     </columns>
                 </TableView>
             </children>
