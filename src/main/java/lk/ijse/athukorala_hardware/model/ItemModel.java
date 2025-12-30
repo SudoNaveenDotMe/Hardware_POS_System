@@ -1,7 +1,6 @@
 package lk.ijse.athukorala_hardware.model;
 
 import lk.ijse.athukorala_hardware.db.DBConnection;
-import lk.ijse.athukorala_hardware.dto.CustomerDTO;
 import lk.ijse.athukorala_hardware.dto.ItemDTO;
 import lk.ijse.athukorala_hardware.util.CrudUtil;
 
@@ -55,7 +54,7 @@ public class ItemModel {
             double price = result.getDouble("price");
             int qty = result.getInt("stock_qty");
 
-            return new ItemDTO(itemId,name,price,qty);
+            return new ItemDTO(itemId, name, price, qty);
         }
         return null;
     }
@@ -80,6 +79,24 @@ public class ItemModel {
             itemDTOList.add(itemDTO);
         }
         return itemDTOList;
+    }
+
+    public List<String> getAllItemIds() throws SQLException {
+        ResultSet rs = CrudUtil.execute("SELECT item_id FROM item");
+        List<String> itemIdList = new ArrayList<>();
+
+        while (rs.next()) {
+            itemIdList.add(rs.getString("item_id"));
+        }
+
+        return itemIdList;
+    }
+
+    public boolean decreaseItemQty(int itemId, int qty) throws SQLException {
+        return CrudUtil.execute("UPDATE item SET stock_qty = stock_qty - ? WHERE item_id =?",
+                qty,
+                itemId
+        );
     }
 
 }
