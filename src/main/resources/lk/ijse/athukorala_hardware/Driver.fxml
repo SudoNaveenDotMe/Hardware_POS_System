@@ -75,8 +75,8 @@
         <columns>
             <TableColumn fx:id="colId" prefWidth="140.0" text="ID" />
             <TableColumn fx:id="colName" prefWidth="280.0" text="Name" />
-            <TableColumn fx:id="colPrice" prefWidth="350.0" text="Contact" />
-            <TableColumn fx:id="colQty" prefWidth="350.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="350.0" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="350.0" text="Address" />
         </columns>
     </TableView>
 

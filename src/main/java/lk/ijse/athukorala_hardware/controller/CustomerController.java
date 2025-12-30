@@ -28,7 +28,7 @@ public class CustomerController implements Initializable {
     private final String CUSTOMER_EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
 
     private final CustomerModel customerModel = new CustomerModel();
-    private boolean isCustomerExsists = false;
+    private boolean isCustomerExsist = false;
 
 
     @FXML
@@ -85,7 +85,7 @@ public class CustomerController implements Initializable {
         addressField.setText(tm.getAddress());
         emailField.setText(tm.getEmail());
 
-        isCustomerExsists = true;
+        isCustomerExsist = true;
     }
 
     @FXML
@@ -104,6 +104,9 @@ public class CustomerController implements Initializable {
                         emailField.setText(customerDTO.getEmail());
                         contactField.setText(customerDTO.getContact());
                         addressField.setText(customerDTO.getAddress());
+
+                        isCustomerExsist = true;
+
                     } else {
                         new Alert(Alert.AlertType.ERROR, "Customer Not Found").show();
                         clearFields();
@@ -119,7 +122,7 @@ public class CustomerController implements Initializable {
     @FXML
     public void saveCustomerOnAction(ActionEvent actionEvent) {
 
-        if (isCustomerExsists){
+        if (isCustomerExsist){
             new Alert(Alert.AlertType.WARNING,
                     "This customer already exists.\nUse UPDATE instead.")
                     .show();
@@ -249,7 +252,7 @@ public class CustomerController implements Initializable {
         addressField.clear();
         emailField.clear();
 
-        isCustomerExsists = false;
+        isCustomerExsist = false;
         btnSave.setDisable(false);    // 👈 enable save
         tblCustomer.getSelectionModel().clearSelection();
     }
