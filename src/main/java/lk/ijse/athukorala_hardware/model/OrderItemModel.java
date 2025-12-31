@@ -10,7 +10,7 @@ import java.util.List;
 public class OrderItemModel {
     private final ItemModel itemModel = new ItemModel();
 
-    public boolean saveOrderItems(int orderId, List<OrderItemDTO> orderItemList) throws Exception {
+    public void saveOrderItems(int orderId, List<OrderItemDTO> orderItemList) throws Exception {
         for (OrderItemDTO orderItemDTO : orderItemList){
             if (CrudUtil.execute(
                     "INSERT INTO orderDetail (order_id, item_id, qty,total_amount) VALUES (?,?,?,?)",
@@ -30,6 +30,5 @@ public class OrderItemModel {
                 throw new Exception("Something went wrong when inserting data into order Items!!");
             }
         }
-        return true;
     }
 }

@@ -49,17 +49,17 @@ public class OrderController implements Initializable {
     @FXML
     public TableView<OrderItemTM> tblCart;
     @FXML
-    public TableColumn colIndex;
+    public TableColumn<OrderItemTM, Integer> colIndex;
     @FXML
-    public TableColumn colItemName;
+    public TableColumn<OrderItemTM, String> colItemName;
     @FXML
-    public TableColumn colQty;
+    public TableColumn<OrderItemTM, Integer> colQty;
     @FXML
-    public TableColumn colUnitPrice;
+    public TableColumn<OrderItemTM, Double> colUnitPrice;
     @FXML
-    public TableColumn colTotalPrice;
+    public TableColumn<OrderItemTM, Double> colTotalPrice;
     @FXML
-    public TableColumn colAction;
+    public TableColumn<OrderItemTM, Button> colAction;
     @FXML
     public Label lblNetTotal;
 
@@ -164,6 +164,12 @@ public class OrderController implements Initializable {
                     total,
                     deleteBtn
             );
+
+            deleteBtn.setOnAction(e -> {
+                obList.remove(orderItemTM); // Remove the row from the list
+                loadOrderItemTable();       // Recalculate the net total
+                tblCart.refresh();          // Refresh table to prevent glitches
+            });
 
             obList.add(orderItemTM);
             tblCart.setItems(obList);

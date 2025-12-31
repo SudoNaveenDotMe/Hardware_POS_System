@@ -70,11 +70,12 @@
                     </children>
                 </VBox>
 
-                <HBox alignment="CENTER" layoutX="446.0" layoutY="302.0" prefHeight="55.0" prefWidth="634.0" spacing="25.0" style="-fx-padding: 10 0 0 0;">
+                <HBox alignment="CENTER" layoutX="279.0" layoutY="302.0" prefHeight="55.0" prefWidth="801.0" spacing="25.0" style="-fx-padding: 10 0 0 0;">
                     <children>
-                        <Button fx:id="btnSave" onAction="#saveCustomerOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #dc7363; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Save" />
+                        <Button fx:id="btnSave" onAction="#saveCustomerOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #1e8d05; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Save" />
                         <Button onAction="#updateCustomerOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Update" />
                         <Button onAction="#deleteCustomerOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Delete" />
+                  <Button layoutX="494.0" layoutY="20.0" onAction="#printCustomerOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #052e8d; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Print" />
                         <Button onAction="#clearFields" prefHeight="45" prefWidth="140" style="-fx-background-color: #7a7a7a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Clear" />
                     </children>
                 </HBox>
