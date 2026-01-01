@@ -254,7 +254,7 @@ public class CustomerController implements Initializable {
         emailField.clear();
 
         isCustomerExsist = false;
-        btnSave.setDisable(false);    // 👈 enable save
+        btnSave.setDisable(false);
         tblCustomer.getSelectionModel().clearSelection();
     }
 

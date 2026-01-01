@@ -27,11 +27,9 @@
             </children>
         </VBox>
 
-        <!-- FORM AREA -->
         <Pane layoutY="100.0" prefHeight="391.0" prefWidth="1200.0">
             <children>
 
-                <!-- LEFT COLUMN -->
                 <VBox layoutX="80.0" layoutY="30.0" prefWidth="420.0" spacing="14">
                     <children>
 
@@ -53,7 +51,6 @@
                     </children>
                 </VBox>
 
-                <!-- RIGHT COLUMN -->
                 <VBox layoutX="660.0" layoutY="30.0" prefWidth="420.0" spacing="14">
                     <children>
 
@@ -83,7 +80,6 @@
             </children>
         </Pane>
 
-        <!-- TABLE AREA -->
         <Pane layoutY="550.0" prefHeight="330.0" prefWidth="1200.0">
             <children>
                 <TableView fx:id="tblCustomer" layoutX="20.0" layoutY="-62.0" prefHeight="385.0" prefWidth="1160.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">

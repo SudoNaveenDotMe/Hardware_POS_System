@@ -166,9 +166,9 @@ public class OrderController implements Initializable {
             );
 
             deleteBtn.setOnAction(e -> {
-                obList.remove(orderItemTM); // Remove the row from the list
-                loadOrderItemTable();       // Recalculate the net total
-                tblCart.refresh();          // Refresh table to prevent glitches
+                obList.remove(orderItemTM);
+                loadOrderItemTable();
+                tblCart.refresh();
             });
 
             obList.add(orderItemTM);

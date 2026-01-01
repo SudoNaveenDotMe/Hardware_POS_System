@@ -24,7 +24,6 @@ import java.util.ResourceBundle;
 
 public class SupplierController implements Initializable {
 
-    // Regex Patterns for Validation
     private final String SUPPLIER_ID_REGEX = "^[0-9]+$";
     private final String NAME_REGEX = "^[A-Za-z ]{2,50}$";
     private final String CONTACT_REGEX = "^07[0-9]{8}$";

@@ -21,11 +21,9 @@ import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
 
-    // Regex Patterns
     private final String NAME_REGEX = "^[A-Za-z ]{2,50}$";
     private final String EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
 
-    // Models
     private final UserModel userModel = new UserModel();
 
     @FXML
@@ -43,7 +41,6 @@ public class UserController implements Initializable {
     @FXML
     public Button btnSave;
 
-    // Table
     @FXML
     public TableView<UserTM> tblUser; 
     @FXML

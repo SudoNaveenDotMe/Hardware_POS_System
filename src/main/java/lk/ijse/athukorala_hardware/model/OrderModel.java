@@ -2,15 +2,19 @@ package lk.ijse.athukorala_hardware.model;
 
 import lk.ijse.athukorala_hardware.db.DBConnection;
 import lk.ijse.athukorala_hardware.dto.OrderDTO;
+import lk.ijse.athukorala_hardware.dto.tm.OrderTM;
 import lk.ijse.athukorala_hardware.util.CrudUtil;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class OrderModel {
     private final OrderItemModel orderItemModel = new OrderItemModel();
@@ -50,6 +54,31 @@ public class OrderModel {
         } finally {
             conn.setAutoCommit(true);
         }
+    }
+
+    public List<OrderTM> getAllOrders() throws SQLException {
+        Connection conn = DBConnection.getInstance().getConnection();
+        String sql = "SELECT o.order_id, o.customer_id, o.order_date, " +
+                "COALESCE(SUM(od.total_amount), 0) AS order_total " +
+                "FROM `order` o " +
+                "LEFT JOIN orderDetail od ON o.order_id = od.order_id " +
+                "GROUP BY o.order_id " +
+                "ORDER BY o.order_id DESC";
+
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<OrderTM> orderList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            orderList.add(new OrderTM(
+                    resultSet.getInt("order_id"),
+                    resultSet.getInt("customer_id"),
+                    resultSet.getDate("order_date"),
+                    resultSet.getDouble("order_total")
+            ));
+        }
+        return orderList;
     }
 
     public void printOrderInvoice(int orderId) throws SQLException, JRException {

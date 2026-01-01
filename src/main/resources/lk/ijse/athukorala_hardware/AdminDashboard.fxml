@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="900.0" prefWidth="1500.0" stylesheets="@../../../lk/ijse/athukorala_hardware/css/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.AdminDashboardController">
+<?import javafx.scene.control.Tooltip?>
+<BorderPane prefHeight="900.0" prefWidth="1500.0" stylesheets="@../../../lk/ijse/athukorala_hardware/css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.AdminDashboardController">
 
     <!-- CENTER CONTENT -->
     <center>
@@ -20,11 +25,18 @@
 
                     <children>
                         <!-- LOGO -->
-                        <ImageView fitHeight="150.0" fitWidth="260.0" preserveRatio="true">
-                            <image>
-                                <Image url="@images/ATLOGO.png" />
-                            </image>
-                        </ImageView>
+                        <Button onAction="#dashboardOnAction" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-padding: 0;">
+                            <graphic>
+                                <ImageView fitHeight="150.0" fitWidth="260.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/ATLOGO.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Go to Dashboard Home"/>
+                            </tooltip>
+                        </Button>
 
                         <!-- NAVIGATION -->
                         <VBox alignment="TOP_CENTER" spacing="12">
@@ -35,7 +47,7 @@
                                 <Button onAction="#supplierOnAction" styleClass="nav-btn" text="Supplier" />
                                 <Button onAction="#orderOnAction" styleClass="nav-btn" text="Order" />
                                 <Button onAction="#userOnAction" styleClass="nav-btn" text="Users" />
-                                <Button onAction="#reportOnAction" styleClass="nav-btn" text="Report" />
+                                <Button onAction="#ViewOrderOnAction" styleClass="nav-btn" text="History" />
                             </children>
                         </VBox>
 

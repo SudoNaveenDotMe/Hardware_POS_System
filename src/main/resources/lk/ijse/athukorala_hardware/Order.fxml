@@ -5,19 +5,15 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.athukorala_hardware.controller.OrderController">
 
-    <!-- Page Title -->
     <Label layoutX="40" layoutY="30" style="-fx-font-size: 28px; -fx-text-fill: #333; -fx-font-weight: bold;" text="Place Order" />
 
-    <!-- Form -->
     <VBox layoutX="40" layoutY="100" prefHeight="768.0" prefWidth="300.0" spacing="25.0">
 
-        <!-- Customer Selection -->
         <VBox spacing="6">
             <Label style="-fx-font-size: 16px; -fx-text-fill: #444;" text="Customer" />
             <ComboBox fx:id="cmbCustomer" onAction="#selectCustomerOnAction" prefWidth="300" promptText="Select Customer" style="-fx-background-radius: 10; -fx-padding: 8;" />
         </VBox>
 
-        <!-- Customer Details -->
         <VBox spacing="10.0">
          <HBox prefHeight="40.0" prefWidth="300.0" spacing="20.0">
             <children>
@@ -34,13 +30,11 @@
          </HBox>
         </VBox>
 
-        <!-- Item Selection -->
         <VBox spacing="6">
             <Label style="-fx-font-size: 16px; -fx-text-fill: #444;" text="Item" />
             <ComboBox fx:id="cmbItem" onAction="#selectItemOnAction" prefWidth="300" promptText="Select Item" style="-fx-background-radius: 10; -fx-padding: 8;" />
         </VBox>
 
-        <!-- Item Details -->
         <VBox spacing="4">
          <children>
             <HBox prefHeight="40.0" prefWidth="200.0" spacing="20.0">
@@ -52,19 +46,16 @@
          </children>
         </VBox>
 
-        <!-- Price -->
         <VBox spacing="6">
             <Label style="-fx-font-size: 16px; -fx-text-fill: #444;" text="Price" />
             <TextField fx:id="txtItemPrice" editable="false" prefWidth="300" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: #f0f0f0;" />
         </VBox>
 
-        <!-- Stock Qty -->
         <VBox spacing="6">
             <Label style="-fx-font-size: 16px; -fx-text-fill: #444;" text="Available Stock" />
             <TextField fx:id="txtStock" editable="false" prefWidth="300" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: #f0f0f0;" />
         </VBox>
 
-        <!-- Quantity -->
         <VBox>
             <Label style="-fx-font-size: 16px; -fx-text-fill: #444;" text="Order Quantity" />
             <TextField fx:id="txtQty" prefWidth="300" promptText="Enter qty" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
@@ -72,17 +63,14 @@
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0">
          <children>
       
-              <!-- Add to Cart -->
               <Button onAction="#addToCartOnAction" prefHeight="40" prefWidth="136.0" style="-fx-background-color: #dc7363; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Add to Cart" />
             <Button onAction="#resetOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #057d08; -fx-text-fill: white; -fx-font-size: 18px; -fx-background-radius: 10;" text="Reset" />
          </children>
       </HBox>
     </VBox>
 
-    <!-- Vertical Separator -->
     <Separator layoutX="380" layoutY="20" orientation="VERTICAL" prefHeight="860.0" prefWidth="5.0" />
 
-    <!-- Cart Table -->
     <TableView fx:id="tblCart" layoutX="420" layoutY="100" prefHeight="600.0" prefWidth="764.0" style="-fx-background-radius: 12; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 12;">
 
         <columns>
@@ -95,10 +83,8 @@
         </columns>
     </TableView>
 
-    <!-- Place Order -->
     <Button layoutX="964.0" layoutY="747.0" onAction="#placeOrderOnAction" prefHeight="45" prefWidth="220" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 18px; -fx-background-radius: 10;" text="Place Order" />
 
-    <!-- Net Total -->
     <HBox layoutX="433.0" layoutY="763.0" spacing="10">
         <Label style="-fx-font-size: 20px; -fx-text-fill: #333; -fx-font-weight: bold;" text="Net Total:" />
         <Label fx:id="lblNetTotal" style="-fx-font-size: 20px; -fx-text-fill: #dc7363; -fx-font-weight: bold;" text="0.00" />

@@ -13,6 +13,15 @@ import java.util.ResourceBundle;
 public class AdminDashboardController implements Initializable {
     public AnchorPane mainContent;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            dashboardOnAction(null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void customerOnAction(ActionEvent actionEvent) throws IOException {
         Parent customerFXML = App.loadFXML("Customer");
         mainContent.getChildren().setAll(customerFXML);
@@ -38,20 +47,21 @@ public class AdminDashboardController implements Initializable {
         mainContent.getChildren().setAll(orderFXML);
     }
 
-    public void reportOnAction(ActionEvent actionEvent) {
-    }
-
     public void userOnAction(ActionEvent actionEvent) throws IOException {
         Parent orderFXML = App.loadFXML("User");
         mainContent.getChildren().setAll(orderFXML);
     }
 
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
-        App.setRoot("Login");
+        App.setRoot("Login",1000,600);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    public void ViewOrderOnAction(ActionEvent actionEvent) throws IOException {
+        Parent historyFXML = App.loadFXML("ViewOrder");
+        mainContent.getChildren().setAll(historyFXML);
+    }
+    public void dashboardOnAction(ActionEvent actionEvent) throws IOException {
+        Parent root = App.loadFXML("DashboardHome");
+        mainContent.getChildren().setAll(root);
     }
 }

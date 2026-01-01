@@ -13,7 +13,6 @@ import java.util.List;
 
 
 public class UserModel {
-    // Used for Login (Existing method)
     public UserDTO searchUser(String email) throws SQLException {
         String sql = "SELECT * FROM users WHERE email LIKE ?";
         ResultSet resultSet = CrudUtil.execute(sql, email);
@@ -30,7 +29,6 @@ public class UserModel {
         return null;
     }
 
-    // Search by ID (For User Management)
     public UserDTO searchUserById(String id) throws SQLException {
         String sql = "SELECT * FROM users WHERE u_id = ?";
         ResultSet resultSet = CrudUtil.execute(sql, id);
