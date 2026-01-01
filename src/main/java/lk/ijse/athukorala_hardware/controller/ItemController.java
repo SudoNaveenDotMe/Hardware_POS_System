@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import lk.ijse.athukorala_hardware.dto.ItemDTO;
 import lk.ijse.athukorala_hardware.dto.tm.ItemTM;
 import lk.ijse.athukorala_hardware.model.ItemModel;
+import net.sf.jasperreports.engine.JRException;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -226,5 +227,15 @@ public class ItemController implements Initializable {
             return false;
         }
         return true;
+    }
+
+    public void printItemOnAction(ActionEvent actionEvent) {
+        try {
+            itemModel.printItemReport();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

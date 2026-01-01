@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import lk.ijse.athukorala_hardware.dto.SupplierDTO;
 import lk.ijse.athukorala_hardware.dto.tm.SupplierTM;
 import lk.ijse.athukorala_hardware.model.SupplierModel;
+import net.sf.jasperreports.engine.JRException;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -254,5 +255,15 @@ public class SupplierController implements Initializable {
             return false;
         }
         return true;
+    }
+
+    public void printSupplierOnAction(ActionEvent actionEvent) {
+        try {
+            supplierModel.printSupplierReport();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

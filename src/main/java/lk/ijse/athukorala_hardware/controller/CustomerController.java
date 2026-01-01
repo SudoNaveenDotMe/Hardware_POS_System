@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.athukorala_hardware.dto.CustomerDTO;
 import lk.ijse.athukorala_hardware.dto.tm.CustomerTM;
 import lk.ijse.athukorala_hardware.model.CustomerModel;
+import net.sf.jasperreports.engine.JRException;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -257,6 +258,17 @@ public class CustomerController implements Initializable {
         tblCustomer.getSelectionModel().clearSelection();
     }
 
+    @FXML
+    public void printCustomerOnAction(ActionEvent actionEvent) {
+        try {
+            customerModel.printCustomerReport();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+    }
+
     //Validation Part
     private boolean validateField(TextField field, String regex) {
         boolean isValid = field.getText().trim().matches(regex);
@@ -302,6 +314,4 @@ public class CustomerController implements Initializable {
         }
         return true;
     }
-
-
 }

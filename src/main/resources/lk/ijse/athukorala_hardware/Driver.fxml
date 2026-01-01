@@ -58,13 +58,14 @@
     </VBox>
 
     <!-- BUTTONS -->
-    <HBox alignment="CENTER" layoutX="476.0" layoutY="340.0" prefHeight="45.0" prefWidth="670.0" spacing="35.0">
+    <HBox alignment="CENTER" layoutX="455.0" layoutY="340.0" prefHeight="45.0" prefWidth="670.0" spacing="35.0">
         <children>
             <Button onAction="#driverSaveOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #dc7363; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Save" />
 
             <Button onAction="#driverUpdateOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #e7a65a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Update" />
 
             <Button onAction="#driverDeleteOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Delete" />
+         <Button onAction="#printDriverOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #052e8d; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Print" />
 
             <Button onAction="#clearOnAction" prefHeight="45" prefWidth="140" style="-fx-background-color: #7a7a7a; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Clear" />
         </children>

@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import lk.ijse.athukorala_hardware.dto.DriverDTO;
 import lk.ijse.athukorala_hardware.dto.tm.DriverTM;
 import lk.ijse.athukorala_hardware.model.DriverModel;
+import net.sf.jasperreports.engine.JRException;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -233,4 +234,13 @@ public class DriverController implements Initializable {
         }
     }
 
+    public void printDriverOnAction(ActionEvent actionEvent) {
+        try {
+            driverModel.printDriverReport();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

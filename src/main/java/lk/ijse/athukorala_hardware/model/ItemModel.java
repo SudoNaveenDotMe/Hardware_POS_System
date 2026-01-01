@@ -3,7 +3,10 @@ package lk.ijse.athukorala_hardware.model;
 import lk.ijse.athukorala_hardware.db.DBConnection;
 import lk.ijse.athukorala_hardware.dto.ItemDTO;
 import lk.ijse.athukorala_hardware.util.CrudUtil;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -97,6 +100,18 @@ public class ItemModel {
                 qty,
                 itemId
         );
+    }
+
+    public void printItemReport() throws SQLException, JRException {
+        Connection conn = DBConnection.getInstance().getConnection();
+        InputStream reportObject = getClass().getResourceAsStream("/lk/ijse/athukorala_hardware/reports/Hardware_items.jrxml");
+
+
+        JasperReport jr = JasperCompileManager.compileReport(reportObject);
+
+        JasperPrint jp = JasperFillManager.fillReport(jr, null, conn);
+
+        JasperViewer.viewReport(jp,false);
     }
 
 }

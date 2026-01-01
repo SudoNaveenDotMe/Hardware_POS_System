@@ -3,13 +3,18 @@ package lk.ijse.athukorala_hardware.model;
 import lk.ijse.athukorala_hardware.db.DBConnection;
 import lk.ijse.athukorala_hardware.dto.CustomerDTO;
 import lk.ijse.athukorala_hardware.util.CrudUtil;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CustomerModel {
     public boolean saveCustomer(CustomerDTO customerDTO) throws SQLException {
@@ -98,6 +103,18 @@ public class CustomerModel {
         }
 
         return customerIdList;
+    }
+
+    public void printCustomerReport() throws SQLException, JRException {
+        Connection conn = DBConnection.getInstance().getConnection();
+        InputStream reportObject = getClass().getResourceAsStream("/lk/ijse/athukorala_hardware/reports/hardware_customers.jrxml");
+
+
+        JasperReport jr = JasperCompileManager.compileReport(reportObject);
+
+        JasperPrint jp = JasperFillManager.fillReport(jr, null, conn);
+
+        JasperViewer.viewReport(jp,false);
 
     }
 }

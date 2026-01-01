@@ -52,10 +52,6 @@ public class CashierDashboardController implements Initializable {
         mainContent.getChildren().setAll(orderFXML);
     }
 
-    public void reportOnAction(ActionEvent actionEvent) {
-
-    }
-
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
         App.setRoot("Login",1000,600);
     }

@@ -108,46 +108,46 @@
 		</element>
 	</title>
 	<columnHeader height="27">
-		<element kind="staticText" uuid="0aba592b-d236-4e2f-9f76-75a15cd0c269" positionType="Float" x="0" y="0" width="60" height="20" forecolor="#000000" fontName="sansSerif" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
+		<element kind="staticText" uuid="0aba592b-d236-4e2f-9f76-75a15cd0c269" positionType="Float" x="0" y="0" width="60" height="20" forecolor="#000000" fontName="DejaVu Sans" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
 			<text><![CDATA[#ID]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20f50472-cfd3-4d75-af88-4354507bb70b"/>
 		</element>
-		<element kind="staticText" uuid="7199a357-226f-4500-a9aa-1b2b03e94441" positionType="Float" x="60" y="0" width="131" height="20" forecolor="#000000" fontName="sansSerif" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
+		<element kind="staticText" uuid="7199a357-226f-4500-a9aa-1b2b03e94441" positionType="Float" x="60" y="0" width="131" height="20" forecolor="#000000" fontName="DejaVu Sans" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
 			<text><![CDATA[Name]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="879547e3-eee4-4c97-b8cd-c95c7f6216cb"/>
 		</element>
-		<element kind="staticText" uuid="9147cb09-a141-4a64-bcc0-ed7c35a7fd2d" positionType="Float" x="191" y="0" width="109" height="20" forecolor="#000000" fontName="sansSerif" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
+		<element kind="staticText" uuid="9147cb09-a141-4a64-bcc0-ed7c35a7fd2d" positionType="Float" x="191" y="0" width="109" height="20" forecolor="#000000" fontName="DejaVu Sans" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
 			<text><![CDATA[Contact]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ea96647-421a-46f3-9fde-a190a55cfaab"/>
 		</element>
-		<element kind="staticText" uuid="50711037-0fcf-4ef9-b167-a3530c06d233" positionType="Float" x="300" y="0" width="120" height="20" forecolor="#000000" fontName="sansSerif" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
+		<element kind="staticText" uuid="50711037-0fcf-4ef9-b167-a3530c06d233" positionType="Float" x="300" y="0" width="120" height="20" forecolor="#000000" fontName="DejaVu Sans" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
 			<text><![CDATA[Address]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b51fb594-5cdd-445a-82ec-515bec68c7ec"/>
 		</element>
-		<element kind="staticText" uuid="30ca9482-c226-48e4-afe5-62e5cad73ea2" positionType="Float" x="420" y="0" width="135" height="20" forecolor="#000000" fontName="sansSerif" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
+		<element kind="staticText" uuid="30ca9482-c226-48e4-afe5-62e5cad73ea2" positionType="Float" x="420" y="0" width="135" height="20" forecolor="#000000" fontName="DejaVu Sans" fontSize="12.0" bold="true" vTextAlign="Middle" style="Column header">
 			<text><![CDATA[Email]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="43033024-792a-4aa8-91b4-7ab199347ad3"/>
 		</element>
 	</columnHeader>
 	<detail>
 		<band height="20">
-			<element kind="textField" uuid="6c129a16-b064-4696-b603-64260270e58f" positionType="Float" x="0" y="0" width="60" height="20" fontName="sansSerif" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
+			<element kind="textField" uuid="6c129a16-b064-4696-b603-64260270e58f" positionType="Float" x="0" y="0" width="60" height="20" fontName="DejaVu Sans" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
 				<expression><![CDATA[$F{cus_id}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20f50472-cfd3-4d75-af88-4354507bb70b"/>
 			</element>
-			<element kind="textField" uuid="7b8335e1-44cf-451d-8723-b02dd54179f8" positionType="Float" x="60" y="0" width="131" height="20" fontName="sansSerif" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
+			<element kind="textField" uuid="7b8335e1-44cf-451d-8723-b02dd54179f8" positionType="Float" x="60" y="0" width="131" height="20" fontName="DejaVu Sans" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
 				<expression><![CDATA[$F{name}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="879547e3-eee4-4c97-b8cd-c95c7f6216cb"/>
 			</element>
-			<element kind="textField" uuid="76e7d4c9-d7fb-4039-b5e5-1466ea4b5ec1" positionType="Float" x="191" y="0" width="109" height="20" fontName="sansSerif" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
+			<element kind="textField" uuid="76e7d4c9-d7fb-4039-b5e5-1466ea4b5ec1" positionType="Float" x="191" y="0" width="109" height="20" fontName="DejaVu Sans" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
 				<expression><![CDATA[$F{contact}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ea96647-421a-46f3-9fde-a190a55cfaab"/>
 			</element>
-			<element kind="textField" uuid="7b9c2375-eb9f-49a6-92ad-a6baf360e048" positionType="Float" x="300" y="0" width="120" height="20" fontName="sansSerif" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
+			<element kind="textField" uuid="7b9c2375-eb9f-49a6-92ad-a6baf360e048" positionType="Float" x="300" y="0" width="120" height="20" fontName="DejaVu Sans" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
 				<expression><![CDATA[$F{address}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b51fb594-5cdd-445a-82ec-515bec68c7ec"/>
 			</element>
-			<element kind="textField" uuid="31deb404-a325-4dbd-9695-4a6d7e72a2b3" positionType="Float" x="420" y="0" width="135" height="20" fontName="sansSerif" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
+			<element kind="textField" uuid="31deb404-a325-4dbd-9695-4a6d7e72a2b3" positionType="Float" x="420" y="0" width="135" height="20" fontName="DejaVu Sans" fontSize="12.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" vTextAlign="Middle" style="Detail">
 				<expression><![CDATA[$F{email}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="43033024-792a-4aa8-91b4-7ab199347ad3"/>
 			</element>
