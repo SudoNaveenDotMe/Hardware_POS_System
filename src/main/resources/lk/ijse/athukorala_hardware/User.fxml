@@ -38,17 +38,17 @@
 
                         <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Search User :" />
-                            <TextField fx:id="idField" onKeyPressed="#searchCustomerOnAction" prefWidth="420.0" promptText="Enter Customer ID" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="idField" onKeyPressed="#searchUserOnAction" prefWidth="420.0" promptText="Enter Customer ID" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
                         <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Name :" />
-                            <TextField fx:id="nameField" onKeyReleased="#nameKeyReleased" prefWidth="420.0" promptText="Enter name" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="nameField" prefWidth="420.0" promptText="Enter name" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
                         <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Email :" />
-                            <TextField fx:id="emailField" onKeyReleased="#contactKeyReleased" prefWidth="420.0" promptText="Enter Contact" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="emailField" prefWidth="420.0" promptText="Enter Contact" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
                     </children>
@@ -60,7 +60,7 @@
 
                         <VBox spacing="6">
                             <Label style="-fx-font-size: 18px;" text="Password :" />
-                            <TextField fx:id="passwordField" onKeyReleased="#emailKeyReleased" prefWidth="420.0" promptText="Enter Email" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
+                            <TextField fx:id="passwordField" prefWidth="420.0" promptText="Enter Email" style="-fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white;" />
                         </VBox>
 
                         <VBox spacing="6">
@@ -89,13 +89,13 @@
         <!-- TABLE AREA -->
         <Pane layoutY="550.0" prefHeight="330.0" prefWidth="1200.0">
             <children>
-                <TableView fx:id="tblCustomer" layoutX="20.0" layoutY="-62.0" prefHeight="385.0" prefWidth="1160.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">
+                <TableView fx:id="tblUser" layoutX="20.0" layoutY="-62.0" prefHeight="385.0" prefWidth="1160.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ddd;">
                     <columns>
-                        <TableColumn fx:id="colId" prefWidth="120.0" text="ID" />
-                        <TableColumn fx:id="colName" prefWidth="200.0" text="Name" />
-                        <TableColumn fx:id="colAddress" prefWidth="350.0" text="Address" />
-                        <TableColumn fx:id="colEmail" prefWidth="260.0" text="Email" />
-                        <TableColumn fx:id="colContact" prefWidth="228.0" text="Contact" />
+                        <TableColumn fx:id="colId" prefWidth="221.0" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="242.0" text="Name" />
+                        <TableColumn fx:id="colEmail" prefWidth="249.0" text="Email" />
+                  <TableColumn fx:id="colPassword" prefWidth="261.0" text="Password" />
+                  <TableColumn fx:id="colRole" prefWidth="184.0" text="Role" />
                     </columns>
                 </TableView>
             </children>

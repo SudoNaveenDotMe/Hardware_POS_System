@@ -41,8 +41,9 @@ public class AdminDashboardController implements Initializable {
     public void reportOnAction(ActionEvent actionEvent) {
     }
 
-    public void userOnAction(ActionEvent actionEvent) {
-
+    public void userOnAction(ActionEvent actionEvent) throws IOException {
+        Parent orderFXML = App.loadFXML("User");
+        mainContent.getChildren().setAll(orderFXML);
     }
 
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {

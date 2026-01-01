@@ -15,7 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        scene = new Scene(loadFXML("CashierDashboard"));
+        scene = new Scene(loadFXML("AdminDashboard"));
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
